@@ -4,7 +4,7 @@ import static org.fest.assertions.api.Assertions.extractProperty;
 
 import org.fest.assertions.api.AbstractIterableAssert;
 import org.fest.assertions.api.Assertions;
-import org.joyofcoding.objectcalisthenics.Item;
+import org.joyofcoding.objectcalisthenics.model.Item;
 
 public class ItemsAssert extends
 		AbstractIterableAssert<ItemsAssert, Iterable<Item>, Item> {
