@@ -14,29 +14,24 @@ public class BackstagePass
 
     @Override
     public void update() {
-        if (getQuality() < 50) {
-            setQuality(getQuality() + 1);
-
-            if (getSellIn() < 11) {
-                if (getQuality() < 50) {
-                    setQuality(getQuality() + 1);
-                }
-            }
-
-            if (getSellIn() < 6) {
-                if (getQuality() < 50) {
-                    setQuality(getQuality() + 1);
-                }
-            }
-        }
-
-        setSellIn(getSellIn() - 1);
-
-        if (getSellIn() < 0) {
-            setQuality(getQuality() - getQuality());
-        }
-
-
+        getQuality().increase();
+        accountForExpiration();
     }
 
+    @Override
+    public void accountForExpiration() {
+        if (sellIn.sellWithin(11)) {
+            quality.increase();
+        }
+
+        if (sellIn.sellWithin(6)) {
+            quality.increase();
+        }
+
+        sellIn.decrease();
+
+        if (sellIn.isExpired()) {
+            quality.dropToZero();
+        }
+    }
 }

@@ -13,21 +13,16 @@ public class AgedBrie
         super(name, sellIn, quality);
     }
 
-    public void update() {
-        if (getQuality() < 50) {
-            setQuality(getQuality() + 1);
 
-        }
-
-        setSellIn(getSellIn() - 1);
-
-        if (getSellIn() < 0) {
-            if (getQuality() < 50) {
-                setQuality(getQuality() + 1);
-            }
-        }
-
-
+    @Override
+    public void updateQuality() {
+        quality.increase();
     }
 
+    @Override
+    public void accountForExpiration() {
+        if (sellIn.isExpired()) {
+            quality.increase();
+        }
+    }
 }

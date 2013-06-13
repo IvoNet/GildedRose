@@ -15,7 +15,7 @@ public class GildedRoseTest {
     private static final int MAX_QUALITY = 50;
     private GildedRose gildedRose;
     private List<Item> items;
-    private Random rand = new Random(3456789);
+    private final Random rand = new Random(3456789);
 
     @Before
     public void setup() {

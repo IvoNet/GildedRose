@@ -2,51 +2,42 @@ package org.joyofcoding.objectcalisthenics.model;
 
 public class Item {
     String name;
-    private int sellIn;
-    private int quality;
+    SellIn sellIn;
+    Quality quality;
 
     public Item(String name,
                 int sellIn,
                 int quality) {
         this.name = name;
-        this.quality = quality;
-        this.sellIn = sellIn;
+        this.quality = new Quality(quality);
+        this.sellIn = new SellIn(sellIn);
     }
 
     public String getName() {
         return name;
     }
 
-    public int getSellIn() {
+    public SellIn getSellIn() {
         return sellIn;
     }
 
-    public void setSellIn(int sellIn) {
-        this.sellIn = sellIn;
-    }
-
-    public int getQuality() {
+    public Quality getQuality() {
         return quality;
     }
 
-    public void setQuality(int quality) {
-        this.quality = quality;
+    public void update() {
+        updateQuality();
+        sellIn.decrease();
+        accountForExpiration();
     }
 
-    public void update() {
+    public void updateQuality() {
+        quality.decrease();
+    }
 
-        if (getQuality() > 0) {
-            setQuality(getQuality() - 1);
+    public void accountForExpiration() {
+        if (sellIn.isExpired()) {
+            updateQuality();
         }
-
-        setSellIn(getSellIn() - 1);
-
-        if (getSellIn() < 0) {
-            if (getQuality() > 0) {
-                setQuality(getQuality() - 1);
-            }
-        }
-
-
     }
 }
