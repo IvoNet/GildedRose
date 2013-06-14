@@ -9,13 +9,13 @@ import java.util.List;
  */
 public class Items implements Iterable<Item> {
 
-    private List<Item> items;
+    private final List<Item> items;
 
     public Items() {
         items = new ArrayList<>();
     }
 
-    public void add(Item item) {
+    public void add(final Item item) {
         items.add(item);
     }
 
