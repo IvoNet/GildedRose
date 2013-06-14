@@ -1,12 +1,13 @@
 package org.joyofcoding.objectcalisthenics.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * @author Ivo Woltring
  */
-public class Items {
+public class Items implements Iterable<Item> {
 
     private List<Item> items;
 
@@ -24,4 +25,8 @@ public class Items {
         }
     }
 
+    @Override
+    public Iterator<Item> iterator() {
+        return items.iterator();
+    }
 }

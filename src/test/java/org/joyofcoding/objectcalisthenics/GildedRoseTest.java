@@ -3,18 +3,17 @@ package org.joyofcoding.objectcalisthenics;
 import org.joyofcoding.objectcalisthenics.assertions.ItemsAssert;
 import org.joyofcoding.objectcalisthenics.model.BackstagePass;
 import org.joyofcoding.objectcalisthenics.model.Item;
+import org.joyofcoding.objectcalisthenics.model.Items;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class GildedRoseTest {
     private static final int MAX_BACKSTAGE_SELLIN = 30;
     private static final int MAX_QUALITY = 50;
     private GildedRose gildedRose;
-    private List<Item> items;
+    private Items items;
     private final Random rand = new Random(3456789);
 
     @Before
@@ -89,8 +88,8 @@ public class GildedRoseTest {
         }
     }
 
-    private List<Item> aBunchOfBackstagePasses() {
-        List<Item> listOfPasses = new ArrayList<Item>();
+    private Items aBunchOfBackstagePasses() {
+        Items listOfPasses = new Items();
         for (int i = 0; i < 100; i++) {
             listOfPasses.add(aRandomBackstagePass());
         }
