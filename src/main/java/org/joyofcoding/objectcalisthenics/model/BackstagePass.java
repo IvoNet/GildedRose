@@ -12,17 +12,17 @@ public class BackstagePass extends Item {
     @Override
     public void update() {
         getQuality().increase();
-        if (getSellIn() < 11) {
+        if (getSellIn().sellInLessThenDays(11)) {
+            getQuality().increase();
+        }
+        if (getSellIn().sellInLessThenDays(6)) {
             getQuality().increase();
         }
 
-        if (getSellIn() < 6) {
-            getQuality().increase();
-        }
+        getSellIn().decrease();
 
-        setSellIn(getSellIn() - 1);
 
-        if (getSellIn() < 0) {
+        if (getSellIn().isExpired()) {
             getQuality().dropToZero();
         }
     }

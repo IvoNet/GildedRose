@@ -12,18 +12,18 @@ import static org.fest.assertions.api.Assertions.extractProperty;
 public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<Item>, Item> {
 
 
-    protected ItemsAssert(Iterable<Item> actual) {
+    protected ItemsAssert(final Iterable<Item> actual) {
         super(actual, ItemsAssert.class);
     }
 
-    public static ItemsAssert assertThat(Iterable<Item> actual) {
+    public static ItemsAssert assertThat(final Iterable<Item> actual) {
         return new ItemsAssert(actual);
     }
 
-    public ItemsAssert containsOnlyItemNames(String... names) {
+    public ItemsAssert containsOnlyItemNames(final String... names) {
         isNotNull();
 
-        Iterable<String> actualItemNames = extractProperty("name", String.class).from(actual);
+        final Iterable<String> actualItemNames = extractProperty("name", String.class).from(this.actual);
 
         Assertions.assertThat(actualItemNames)
                   .containsOnly(names);
@@ -31,13 +31,11 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
         return this;
     }
 
-    public ItemsAssert containsOnlyItemQualities(Integer... qualities) {
+    public ItemsAssert containsOnlyItemQualities(final Integer... qualities) {
         isNotNull();
 
-//        Iterable<Integer> actualItemQualities = extractProperty("quality", Integer.class).from(actual);
-
-        List<Integer> actualItemQualities = new ArrayList<Integer>();
-        for (final Item item : actual) {
+        final List<Integer> actualItemQualities = new ArrayList<Integer>();
+        for (final Item item : this.actual) {
             actualItemQualities.add(item.getQuality()
                                         .getQuality());
         }
@@ -48,10 +46,14 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
         return this;
     }
 
-    public ItemsAssert containsOnlyItemSellIns(Integer... sellIns) {
+    public ItemsAssert containsOnlyItemSellIns(final Integer... sellIns) {
         isNotNull();
 
-        Iterable<Integer> actualItemSellIns = extractProperty("sellIn", Integer.class).from(actual);
+        final List<Integer> actualItemSellIns = new ArrayList<Integer>();
+        for (final Item actualItemSellIn : this.actual) {
+            actualItemSellIns.add(actualItemSellIn.getSellIn()
+                                                  .daysLeft());
+        }
         Assertions.assertThat(actualItemSellIns)
                   .containsOnly(sellIns);
 

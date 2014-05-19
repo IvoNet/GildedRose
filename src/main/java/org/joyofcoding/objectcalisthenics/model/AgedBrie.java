@@ -20,9 +20,9 @@ public class AgedBrie extends Item {
     public void update() {
         getQuality().increase();
 
-        setSellIn(getSellIn() - 1);
+        getSellIn().decrease();
 
-        if (getSellIn() < 0) {
+        if (getSellIn().isExpired()) {
             getQuality().increase();
         }
 
