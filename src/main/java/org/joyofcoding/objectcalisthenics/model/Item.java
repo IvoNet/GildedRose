@@ -2,8 +2,8 @@ package org.joyofcoding.objectcalisthenics.model;
 
 public class Item {
     private final String name;
-    private SellIn sellIn;
-    private Quality quality;
+    private final SellIn sellIn;
+    private final Quality quality;
 
     public Item(final String name, final int sellIn, final int quality) {
         this.name = name;
