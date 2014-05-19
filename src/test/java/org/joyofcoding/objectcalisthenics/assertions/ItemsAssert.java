@@ -4,6 +4,9 @@ import org.fest.assertions.api.AbstractIterableAssert;
 import org.fest.assertions.api.Assertions;
 import org.joyofcoding.objectcalisthenics.model.Item;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.fest.assertions.api.Assertions.extractProperty;
 
 public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<Item>, Item> {
@@ -31,7 +34,14 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
     public ItemsAssert containsOnlyItemQualities(Integer... qualities) {
         isNotNull();
 
-        Iterable<Integer> actualItemQualities = extractProperty("quality", Integer.class).from(actual);
+//        Iterable<Integer> actualItemQualities = extractProperty("quality", Integer.class).from(actual);
+
+        List<Integer> actualItemQualities = new ArrayList<Integer>();
+        for (final Item item : actual) {
+            actualItemQualities.add(item.getQuality()
+                                        .getQuality());
+        }
+
         Assertions.assertThat(actualItemQualities)
                   .containsOnly(qualities);
 

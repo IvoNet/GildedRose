@@ -18,16 +18,12 @@ public class AgedBrie extends Item {
 
     @Override
     public void update() {
-        if (getQuality() < 50) {
-            setQuality(getQuality() + 1);
-        }
+        getQuality().increase();
 
         setSellIn(getSellIn() - 1);
 
         if (getSellIn() < 0) {
-            if (getQuality() < 50) {
-                setQuality(getQuality() + 1);
-            }
+            getQuality().increase();
         }
 
     }

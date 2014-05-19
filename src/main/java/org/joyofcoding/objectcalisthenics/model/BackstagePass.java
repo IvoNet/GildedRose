@@ -11,26 +11,19 @@ public class BackstagePass extends Item {
 
     @Override
     public void update() {
-        if (getQuality() < 50) {
-            setQuality(getQuality() + 1);
+        getQuality().increase();
+        if (getSellIn() < 11) {
+            getQuality().increase();
+        }
 
-            if (getSellIn() < 11) {
-                if (getQuality() < 50) {
-                    setQuality(getQuality() + 1);
-                }
-            }
-
-            if (getSellIn() < 6) {
-                if (getQuality() < 50) {
-                    setQuality(getQuality() + 1);
-                }
-            }
+        if (getSellIn() < 6) {
+            getQuality().increase();
         }
 
         setSellIn(getSellIn() - 1);
 
         if (getSellIn() < 0) {
-            setQuality(getQuality() - getQuality());
+            getQuality().dropToZero();
         }
     }
 }
