@@ -3,31 +3,30 @@ package org.joyofcoding.objectcalisthenics;
 import org.joyofcoding.objectcalisthenics.assertions.ItemsAssert;
 import org.joyofcoding.objectcalisthenics.model.BackstagePass;
 import org.joyofcoding.objectcalisthenics.model.Item;
+import org.joyofcoding.objectcalisthenics.model.Items;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class GildedRoseTest {
     private static final int MAX_BACKSTAGE_SELLIN = 30;
     private static final int MAX_QUALITY = 50;
+    private final Random rand = new Random(3456789);
     private GildedRose gildedRose;
-    private List<Item> items;
-    private Random rand = new Random(3456789);
+    private Items items;
 
     @Before
     public void setup() {
-        gildedRose = new GildedRose();
-        items = gildedRose.makeItems();
+        this.gildedRose = new GildedRose();
+        this.items = this.gildedRose.makeItems();
     }
 
     @Test
     public void after_one_day() throws Exception {
         repeatUpdateQuality(1);
 
-        ItemsAssert.assertThat(items)
+        ItemsAssert.assertThat(this.items)
                    .containsOnlyItemNames("+5 Dexterity Vest", "Aged Brie", "Elixir of the Mongoose",
                                           "Sulfuras, Hand of Ragnaros", "Backstage passes to a TAFKAL80ETC concert",
                                           "Conjured Mana Cake")
@@ -40,7 +39,7 @@ public class GildedRoseTest {
     public void after_three_days() throws Exception {
         repeatUpdateQuality(3);
 
-        ItemsAssert.assertThat(items)
+        ItemsAssert.assertThat(this.items)
                    .containsOnlyItemNames("+5 Dexterity Vest", "Aged Brie", "Elixir of the Mongoose",
                                           "Sulfuras, Hand of Ragnaros", "Backstage passes to a TAFKAL80ETC concert",
                                           "Conjured Mana Cake")
@@ -52,7 +51,7 @@ public class GildedRoseTest {
     public void after_a_shitload_of_days() throws Exception {
         repeatUpdateQuality(500);
 
-        ItemsAssert.assertThat(items)
+        ItemsAssert.assertThat(this.items)
                    .containsOnlyItemNames("+5 Dexterity Vest", "Aged Brie", "Elixir of the Mongoose",
                                           "Sulfuras, Hand of Ragnaros", "Backstage passes to a TAFKAL80ETC concert",
                                           "Conjured Mana Cake")
@@ -62,10 +61,10 @@ public class GildedRoseTest {
 
     @Test
     public void backstage_pass_golden_copy() throws Exception {
-        items = aBunchOfBackstagePasses();
+        this.items = aBunchOfBackstagePasses();
         repeatUpdateQuality(11);
 
-        ItemsAssert.assertThat(items)
+        ItemsAssert.assertThat(this.items)
                    .containsOnlyItemQualities(30, 48, 45, 0, 11, 0, 0, 0, 36, 15, 33, 50, 50, 27, 0, 26, 42, 50, 0, 50,
                                               50, 0, 29, 0, 0, 36, 50, 41, 50, 0, 49, 25, 0, 12, 0, 50, 0, 0, 0, 43, 0,
                                               50, 23, 27, 33, 0, 0, 37, 0, 43, 0, 0, 45, 50, 22, 43, 0, 30, 14, 44, 50,
@@ -78,14 +77,14 @@ public class GildedRoseTest {
                                             -9, -1, -6, 5, -5, 8, -5, 11, 3, 17, 17, 13, 5, 11, 16, -3, 6, 11);
     }
 
-    private void repeatUpdateQuality(int times) {
+    private void repeatUpdateQuality(final int times) {
         for (int i = 0; i < times; i++) {
-            gildedRose.updateQuality(items);
+            this.gildedRose.updateQuality(this.items);
         }
     }
 
-    private List<Item> aBunchOfBackstagePasses() {
-        List<Item> listOfPasses = new ArrayList<Item>();
+    private Items aBunchOfBackstagePasses() {
+        final Items listOfPasses = new Items();
         for (int i = 0; i < 100; i++) {
             listOfPasses.add(aRandomBackstagePass());
         }
@@ -93,16 +92,16 @@ public class GildedRoseTest {
     }
 
     private int randomSellIn() {
-        return rand.nextInt(MAX_BACKSTAGE_SELLIN);
+        return this.rand.nextInt(MAX_BACKSTAGE_SELLIN);
     }
 
     private int randomQuality() {
-        return rand.nextInt(MAX_QUALITY);
+        return this.rand.nextInt(MAX_QUALITY);
     }
 
     private Item aRandomBackstagePass() {
-        int quality = randomQuality();
-        int sellIn = randomSellIn();
+        final int quality = randomQuality();
+        final int sellIn = randomSellIn();
         return new BackstagePass("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
     }
 

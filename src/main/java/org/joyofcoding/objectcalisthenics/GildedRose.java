@@ -3,10 +3,8 @@ package org.joyofcoding.objectcalisthenics;
 import org.joyofcoding.objectcalisthenics.model.AgedBrie;
 import org.joyofcoding.objectcalisthenics.model.BackstagePass;
 import org.joyofcoding.objectcalisthenics.model.Item;
+import org.joyofcoding.objectcalisthenics.model.Items;
 import org.joyofcoding.objectcalisthenics.model.Sulfuras;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class GildedRose {
     public static void main(final String[] args) {
@@ -14,8 +12,8 @@ public class GildedRose {
         gildedRose.updateQuality(gildedRose.makeItems());
     }
 
-    public List<Item> makeItems() {
-        final List<Item> items = new ArrayList<Item>();
+    public Items makeItems() {
+        final Items items = new Items();
         items.add(new Item("+5 Dexterity Vest", 10, 20));
         items.add(new AgedBrie("Aged Brie", 2, 0));
         items.add(new Item("Elixir of the Mongoose", 5, 7));
@@ -25,11 +23,7 @@ public class GildedRose {
         return items;
     }
 
-    public void updateQuality(final List<Item> list) {
-        final List<Item> items = new ArrayList<Item>(list); //decouple
-        for (final Item item : items) {
-            item.update();
-        }
+    public void updateQuality(final Items items) {
+        items.update();
     }
-
 }
