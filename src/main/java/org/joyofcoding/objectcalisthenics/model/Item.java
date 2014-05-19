@@ -35,9 +35,7 @@ public class Item {
         if (!getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
 
             if (getQuality() > 0) {
-                if (!getName().equals("Sulfuras, Hand of Ragnaros")) {
-                    setQuality(getQuality() - 1);
-                }
+                setQuality(getQuality() - 1);
             }
         } else {
             if (getQuality() < 50) {
@@ -59,16 +57,12 @@ public class Item {
             }
         }
 
-        if (!getName().equals("Sulfuras, Hand of Ragnaros")) {
-            setSellIn(getSellIn() - 1);
-        }
+        setSellIn(getSellIn() - 1);
 
         if (getSellIn() < 0) {
             if (!getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (getQuality() > 0) {
-                    if (!getName().equals("Sulfuras, Hand of Ragnaros")) {
-                        setQuality(getQuality() - 1);
-                    }
+                    setQuality(getQuality() - 1);
                 }
             } else {
                 setQuality(getQuality() - getQuality());
