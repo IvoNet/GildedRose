@@ -7,9 +7,9 @@ In this version I will try to show the changes step by step.
 
 ## Step 0: 
 
-'''bash
+```bash
 git checkout master
-'''
+```
 
 This step is the origional code. This code is the code to be refactored.
 
