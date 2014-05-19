@@ -1,4 +1,4 @@
-package org.joyofcoding.objectcalisthenics;
+package org.joyofcoding.objectcalisthenics.model;
 
 public class Item {
 	private String name;
