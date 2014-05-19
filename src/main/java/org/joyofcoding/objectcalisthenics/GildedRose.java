@@ -1,6 +1,7 @@
 package org.joyofcoding.objectcalisthenics;
 
 import org.joyofcoding.objectcalisthenics.model.AgedBrie;
+import org.joyofcoding.objectcalisthenics.model.BackstagePass;
 import org.joyofcoding.objectcalisthenics.model.Item;
 import org.joyofcoding.objectcalisthenics.model.Sulfuras;
 
@@ -19,7 +20,7 @@ public class GildedRose {
         items.add(new AgedBrie("Aged Brie", 2, 0));
         items.add(new Item("Elixir of the Mongoose", 5, 7));
         items.add(new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80));
-        items.add(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20));
+        items.add(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20));
         items.add(new Item("Conjured Mana Cake", 3, 6));
         return items;
     }

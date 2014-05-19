@@ -1,6 +1,7 @@
 package org.joyofcoding.objectcalisthenics;
 
 import org.joyofcoding.objectcalisthenics.assertions.ItemsAssert;
+import org.joyofcoding.objectcalisthenics.model.BackstagePass;
 import org.joyofcoding.objectcalisthenics.model.Item;
 import org.junit.Before;
 import org.junit.Test;
@@ -102,7 +103,7 @@ public class GildedRoseTest {
     private Item aRandomBackstagePass() {
         int quality = randomQuality();
         int sellIn = randomSellIn();
-        return new Item("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
+        return new BackstagePass("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
     }
 
 }

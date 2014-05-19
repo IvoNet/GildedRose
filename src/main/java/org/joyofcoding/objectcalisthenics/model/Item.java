@@ -32,40 +32,16 @@ public class Item {
     }
 
     public void update() {
-        if (!getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
 
-            if (getQuality() > 0) {
-                setQuality(getQuality() - 1);
-            }
-        } else {
-            if (getQuality() < 50) {
-                setQuality(getQuality() + 1);
-
-                if (getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
-                    if (getSellIn() < 11) {
-                        if (getQuality() < 50) {
-                            setQuality(getQuality() + 1);
-                        }
-                    }
-
-                    if (getSellIn() < 6) {
-                        if (getQuality() < 50) {
-                            setQuality(getQuality() + 1);
-                        }
-                    }
-                }
-            }
+        if (getQuality() > 0) {
+            setQuality(getQuality() - 1);
         }
 
         setSellIn(getSellIn() - 1);
 
         if (getSellIn() < 0) {
-            if (!getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (getQuality() > 0) {
-                    setQuality(getQuality() - 1);
-                }
-            } else {
-                setQuality(getQuality() - getQuality());
+            if (getQuality() > 0) {
+                setQuality(getQuality() - 1);
             }
         }
     }
