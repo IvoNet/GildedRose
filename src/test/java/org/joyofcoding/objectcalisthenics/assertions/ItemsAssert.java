@@ -7,12 +7,10 @@ import org.joyofcoding.objectcalisthenics.model.Item;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.fest.assertions.api.Assertions.extractProperty;
-
 public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<Item>, Item> {
 
 
-    protected ItemsAssert(final Iterable<Item> actual) {
+    private ItemsAssert(final Iterable<Item> actual) {
         super(actual, ItemsAssert.class);
     }
 
@@ -23,7 +21,10 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
     public ItemsAssert containsOnlyItemNames(final String... names) {
         isNotNull();
 
-        final Iterable<String> actualItemNames = extractProperty("name", String.class).from(this.actual);
+        final List<String> actualItemNames = new ArrayList<String>();
+        for (final Item item : this.actual) {
+            actualItemNames.add(item.toString());
+        }
 
         Assertions.assertThat(actualItemNames)
                   .containsOnly(names);
@@ -37,9 +38,8 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
         final List<Integer> actualItemQualities = new ArrayList<Integer>();
         for (final Item item : this.actual) {
             actualItemQualities.add(item.getQuality()
-                                        .getQuality());
+                                        .value());
         }
-
         Assertions.assertThat(actualItemQualities)
                   .containsOnly(qualities);
 
@@ -50,14 +50,14 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
         isNotNull();
 
         final List<Integer> actualItemSellIns = new ArrayList<Integer>();
-        for (final Item actualItemSellIn : this.actual) {
-            actualItemSellIns.add(actualItemSellIn.getSellIn()
-                                                  .daysLeft());
+        for (final Item item : this.actual) {
+            actualItemSellIns.add(item.getSellIn().value());
         }
         Assertions.assertThat(actualItemSellIns)
                   .containsOnly(sellIns);
 
         return this;
     }
+
 
 }

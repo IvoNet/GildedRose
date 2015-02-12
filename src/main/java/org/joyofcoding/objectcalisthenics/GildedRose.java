@@ -2,24 +2,28 @@ package org.joyofcoding.objectcalisthenics;
 
 import org.joyofcoding.objectcalisthenics.model.AgedBrie;
 import org.joyofcoding.objectcalisthenics.model.BackstagePass;
-import org.joyofcoding.objectcalisthenics.model.Item;
+import org.joyofcoding.objectcalisthenics.model.ConjuredManaCake;
+import org.joyofcoding.objectcalisthenics.model.DexterityVest;
+import org.joyofcoding.objectcalisthenics.model.Elixir;
 import org.joyofcoding.objectcalisthenics.model.Items;
 import org.joyofcoding.objectcalisthenics.model.Sulfuras;
 
 public class GildedRose {
     public static void main(final String[] args) {
         final GildedRose gildedRose = new GildedRose();
+        final Items items = gildedRose.makeItems();
+        gildedRose.updateQuality(items);
         gildedRose.updateQuality(gildedRose.makeItems());
     }
 
     public Items makeItems() {
         final Items items = new Items();
-        items.add(new Item("+5 Dexterity Vest", 10, 20));
-        items.add(new AgedBrie("Aged Brie", 2, 0));
-        items.add(new Item("Elixir of the Mongoose", 5, 7));
-        items.add(new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80));
-        items.add(new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20));
-        items.add(new Item("Conjured Mana Cake", 3, 6));
+        items.add(new DexterityVest(10, 20));
+        items.add(new AgedBrie(2, 0));
+        items.add(new Elixir(5, 7));
+        items.add(new Sulfuras(0, 80));
+        items.add(new BackstagePass(15, 20));
+        items.add(new ConjuredManaCake(3, 6));
         return items;
     }
 

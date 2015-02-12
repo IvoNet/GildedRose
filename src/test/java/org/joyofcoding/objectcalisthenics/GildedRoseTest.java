@@ -30,6 +30,9 @@ public class GildedRoseTest {
                    .containsOnlyItemNames("+5 Dexterity Vest", "Aged Brie", "Elixir of the Mongoose",
                                           "Sulfuras, Hand of Ragnaros", "Backstage passes to a TAFKAL80ETC concert",
                                           "Conjured Mana Cake")
+                   .containsOnlyItemNames("+5 Dexterity Vest", "Aged Brie", "Elixir of the Mongoose",
+                                          "Sulfuras, Hand of Ragnaros", "Backstage passes to a TAFKAL80ETC concert",
+                                          "Conjured Mana Cake")
                    .containsOnlyItemQualities(19, 1, 6, 80, 21, 5)
                    .containsOnlyItemSellIns(9, 1, 4, 0, 14, 2);
 
@@ -102,7 +105,7 @@ public class GildedRoseTest {
     private Item aRandomBackstagePass() {
         final int quality = randomQuality();
         final int sellIn = randomSellIn();
-        return new BackstagePass("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
+        return new BackstagePass(sellIn, quality);
     }
 
 }

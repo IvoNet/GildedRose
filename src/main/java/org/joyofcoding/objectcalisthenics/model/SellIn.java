@@ -1,29 +1,44 @@
+/*
+ * Copyright 2015 ivonet
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.joyofcoding.objectcalisthenics.model;
 
 /**
- *
  * @author Ivo Woltring
  */
 public class SellIn {
-    private int days;
+    private int sellIn;
 
-    public SellIn(final int days) {
-        this.days = days;
+    public SellIn(final int sellIn) {
+        this.sellIn = sellIn;
     }
 
     public void decrease() {
-        this.days--;
+        this.sellIn--;
     }
 
     public boolean isExpired() {
-        return this.days < 0;
+        return this.sellIn < 0;
     }
 
-    public boolean sellInLessThenDays(final int value) {
-        return this.days < value;
+    public boolean sellInDays(final int days) {
+        return this.sellIn < days;
     }
 
-    public Integer daysLeft() {
-        return this.days;
+    public Integer value() {
+        return this.sellIn;
     }
 }
