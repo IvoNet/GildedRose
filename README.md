@@ -42,10 +42,19 @@ Wrap primitives... "Tell don't ask!"
 ## Step 4:
 
 ```bash
-git checkout finished
+git checkout step_4
 ```
 
 Look at me being beautiful code :-)
 
+
+
+## Step 5:
+
+```bash
+git checkout step_5
+```
+
+Went a bit overboard and eliminated the name property also.
 
 
