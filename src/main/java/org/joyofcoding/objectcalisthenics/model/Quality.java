@@ -28,6 +28,6 @@ public class Quality {
     }
 
     public Integer getQuality() {
-        return quality;
+        return this.quality;
     }
 }
