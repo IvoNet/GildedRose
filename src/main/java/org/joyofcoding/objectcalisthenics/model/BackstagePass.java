@@ -27,22 +27,23 @@ public class BackstagePass extends Item {
 
     @Override
     public void update() {
-        getQuality().increase();
+        increaseQuality();
 
-        if (getSellIn().sellInDays(11)) {
-            getQuality().increase();
+        if (daysLeft(11)) {
+            increaseQuality();
         }
 
-        if (getSellIn().sellInDays(6)) {
-            getQuality().increase();
+        if (daysLeft(6)) {
+            increaseQuality();
         }
 
-        getSellIn().decrease();
+        decreaseSellIn();
 
-        if (getSellIn().isExpired()) {
-            getQuality().dropToZero();
+        if (expired()) {
+            removeAllQuality();
         }
     }
+
 
     @Override
     public String toString() {

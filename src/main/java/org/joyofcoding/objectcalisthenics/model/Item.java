@@ -25,20 +25,44 @@ public class Item {
         this.sellIn = new SellIn(sellIn);
     }
 
-    public SellIn getSellIn() {
-        return this.sellIn;
+    protected boolean expired() {
+        return this.sellIn.isExpired();
     }
 
-    public Quality getQuality() {
-        return this.quality;
+    protected void decreaseSellIn() {
+        this.sellIn.decrease();
+    }
+
+    protected boolean daysLeft(final int days) {
+        return this.sellIn.sellInDays(days);
+    }
+
+    public int daysLeft() {
+        return this.sellIn.value();
+    }
+
+    protected void increaseQuality() {
+        this.quality.increase();
+    }
+
+    protected void decreaseQuality() {
+        this.quality.decrease();
+    }
+
+    protected void removeAllQuality() {
+        this.quality.dropToZero();
+    }
+
+    public int qualityValue() {
+        return this.quality.value();
     }
 
     public void update() {
-        this.quality.decrease();
-        getSellIn().decrease();
+        decreaseQuality();
+        decreaseSellIn();
 
-        if (getSellIn().isExpired()) {
-            this.quality.decrease();
+        if (expired()) {
+            decreaseQuality();
         }
     }
 

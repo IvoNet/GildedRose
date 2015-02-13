@@ -28,17 +28,19 @@ public class AgedBrie extends Item {
 
     @Override
     public void update() {
-        getQuality().increase();
+        increaseQuality();
 
-        getSellIn().decrease();
+        decreaseSellIn();
 
-        if (getSellIn().isExpired()) {
-            getQuality().increase();
+        if (expired()) {
+            increaseQuality();
         }
     }
+
 
     @Override
     public String toString() {
         return "Aged Brie";
     }
+
 }

@@ -37,8 +37,7 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
 
         final List<Integer> actualItemQualities = new ArrayList<Integer>();
         for (final Item item : this.actual) {
-            actualItemQualities.add(item.getQuality()
-                                        .value());
+            actualItemQualities.add(item.qualityValue());
         }
         Assertions.assertThat(actualItemQualities)
                   .containsOnly(qualities);
@@ -51,7 +50,7 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
 
         final List<Integer> actualItemSellIns = new ArrayList<Integer>();
         for (final Item item : this.actual) {
-            actualItemSellIns.add(item.getSellIn().value());
+            actualItemSellIns.add(item.daysLeft());
         }
         Assertions.assertThat(actualItemSellIns)
                   .containsOnly(sellIns);

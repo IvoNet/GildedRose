@@ -44,4 +44,12 @@ public class Items implements Iterable<Item> {
     public Iterator<Item> iterator() {
         return this.items.iterator();
     }
+
+//    public List<Integer> retrieveSellInsAsList() {
+//        final List<Integer> sellIns = new ArrayList<Integer>();
+//        for (final Item item : this.items) {
+//            sellIns.add(item.daysLeft());
+//        }
+//        return sellIns;
+//    }
 }
