@@ -58,3 +58,11 @@ git checkout step_5
 Went a bit overboard and eliminated the name property also.
 
 
+## Step 6:
+
+```bash
+git checkout step_6
+```
+
+We still had some "Feature Envy" by exposing the SellIn and Quality class by getter methods.
+
