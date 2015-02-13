@@ -13,7 +13,6 @@ public class GildedRose {
         final GildedRose gildedRose = new GildedRose();
         final Items items = gildedRose.makeItems();
         gildedRose.updateQuality(items);
-        gildedRose.updateQuality(gildedRose.makeItems());
     }
 
     public Items makeItems() {
