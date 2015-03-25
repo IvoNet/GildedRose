@@ -14,10 +14,6 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
         super(actual, ItemsAssert.class);
     }
 
-    public static ItemsAssert assertThat(final Iterable<Item> actual) {
-        return new ItemsAssert(actual);
-    }
-
     public ItemsAssert containsOnlyItemNames(final String... names) {
         isNotNull();
 
@@ -56,6 +52,10 @@ public class ItemsAssert extends AbstractIterableAssert<ItemsAssert, Iterable<It
                   .containsOnly(sellIns);
 
         return this;
+    }
+
+    public static ItemsAssert assertThat(final Iterable<Item> actual) {
+        return new ItemsAssert(actual);
     }
 
 

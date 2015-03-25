@@ -9,12 +9,6 @@ import org.joyofcoding.objectcalisthenics.model.Items;
 import org.joyofcoding.objectcalisthenics.model.Sulfuras;
 
 public class GildedRose {
-    public static void main(final String[] args) {
-        final GildedRose gildedRose = new GildedRose();
-        final Items items = gildedRose.makeItems();
-        gildedRose.updateQuality(items);
-    }
-
     public Items makeItems() {
         final Items items = new Items();
         items.add(new DexterityVest(10, 20));
@@ -28,5 +22,11 @@ public class GildedRose {
 
     public void updateQuality(final Items items) {
         items.update();
+    }
+
+    public static void main(final String[] args) {
+        final GildedRose gildedRose = new GildedRose();
+        final Items items = gildedRose.makeItems();
+        gildedRose.updateQuality(items);
     }
 }
