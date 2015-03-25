@@ -20,7 +20,7 @@ public class GildedRose {
         return items;
     }
 
-    public void updateQuality(List<Item> list) {
+    public void updateQuality(List<Item> list ) {
     	List<Item> items = list;
         for (int i = 0; i < items.size(); i++) {
     		if (!items.get(i).getName().equals("Aged Brie")
