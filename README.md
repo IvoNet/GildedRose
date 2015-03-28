@@ -2,7 +2,8 @@
 
 see also here: https://github.com/martinsson/DevelopersAnonymous
 
-see for demo here: https://youtu.be/LvkKO9KQAhI
+see for demo here: 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LvkKO9KQAhI" frameborder="0" allowfullscreen></iframe>
 
 In this version I will try to show the changes step by step.
 
