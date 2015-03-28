@@ -3,7 +3,9 @@
 see also here: https://github.com/martinsson/DevelopersAnonymous
 
 see for demo here: 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LvkKO9KQAhI" frameborder="0" allowfullscreen></iframe>
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/LvkKO9KQAhI/0.jpg)](http://www.youtube.com/watch?v=LvkKO9KQAhI)
+
 
 In this version I will try to show the changes step by step.
 
