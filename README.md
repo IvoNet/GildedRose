@@ -1,6 +1,7 @@
 # The GildedRose kata #
 
 see also here: https://github.com/martinsson/DevelopersAnonymous
+see for demo here: https://youtu.be/LvkKO9KQAhI
 
 In this version I will try to show the changes step by step.
 
