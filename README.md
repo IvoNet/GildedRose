@@ -2,9 +2,7 @@
 
 see also here: https://github.com/martinsson/DevelopersAnonymous
 
-see for demo here: 
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/LvkKO9KQAhI/0.jpg)](http://www.youtube.com/watch?v=LvkKO9KQAhI)
+[![YouTube Demo](http://img.youtube.com/vi/LvkKO9KQAhI/0.jpg)](http://www.youtube.com/watch?v=LvkKO9KQAhI)
 
 
 In this version I will try to show the changes step by step.
