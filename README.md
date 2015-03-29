@@ -2,7 +2,7 @@
 
 see also here: https://github.com/martinsson/DevelopersAnonymous
 
-[![YouTube Demo](http://img.youtube.com/vi/LvkKO9KQAhI/0.jpg)](http://www.youtube.com/watch?v=LvkKO9KQAhI)
+[![YouTube Demo](http://img.youtube.com/vi/2hUZYeNXZ7Y/0.jpg)](http://www.youtube.com/watch?v=2hUZYeNXZ7Y)
 
 
 In this version I will try to show the changes step by step.
