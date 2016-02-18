@@ -1,6 +1,6 @@
 # The GildedRose kata #
 
-see also here: https://github.com/martinsson/DevelopersAnonymous
+see also here: [Developers anonymous](http://ivo2u.nl/WA)
 
 [![YouTube Demo](http://img.youtube.com/vi/2hUZYeNXZ7Y/0.jpg)](http://www.youtube.com/watch?v=2hUZYeNXZ7Y)
 
